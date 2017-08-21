@@ -1,2 +1,2 @@
 # PAM
-Programmation multi-tier
+Programmation d'application Multi-tier
