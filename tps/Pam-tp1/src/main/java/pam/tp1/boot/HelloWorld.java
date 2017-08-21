@@ -24,12 +24,15 @@ public class HelloWorld {
     		String initialMessage= "xxxxbonjour\t\t   le     monde\n truc bidull eeee      eeee";
     		System.out.println(initialMessage);
     		
+    		
+    		//Question 1
     		IFormatMessage formater = (IFormatMessage) context.getBean("simple_message_formater");
     		System.out.println(formater.formatMessage(initialMessage));
     	        
     		IFormatMessage formater2 = (IFormatMessage) context.getBean("advanced_message_formater");
-    		System.out.println(formater2.formatMessage(initialMessage));
-
+    		//System.out.println(formater2.formatMessage(initialMessage));
+    		
+    		//Question 2
     		AlertMail alertMail = (AlertMail) context.getBean("alertMail");
     		alertMail.sendMessage(formater2.formatMessage(initialMessage));
     		
