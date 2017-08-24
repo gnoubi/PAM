@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: hello-tp1-a
+Implementation-Title: hello-tp2-b
 Implementation-Version: 0.1.0
 Built-By: nicolas
 Implementation-Vendor-Id: pam.boot
 Build-Jdk: 1.8.0_131
-Implementation-URL: http://projects.spring.io/spring-boot/hello-tp1-a/
+Implementation-URL: http://projects.spring.io/spring-boot/hello-tp2-b/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
 

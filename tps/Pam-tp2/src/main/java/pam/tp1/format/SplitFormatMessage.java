@@ -3,19 +3,26 @@ package pam.tp1.format;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service 
 public class SplitFormatMessage implements IFormatMessage{
 	private static Logger logger = Logger.getLogger(SplitFormatMessage.class);
 	private int lineSize;
 	
-	public SplitFormatMessage(int nb) {
-		this.lineSize = nb;
-		logger.info("initialize bean (nb characters: "+nb+")");
+	public SplitFormatMessage()
+	{
+		lineSize = 30;
+		logger.info("initialize bean (nb characters: "+lineSize+")");
 	}
-	public int getNbUpperCase() {
+	
+	public SplitFormatMessage(int nb) {
+		this();
+		this.lineSize = nb;
+		
+	}
+	public int getLineSize() {
 		return lineSize;
 	}
-	public void setNbUpperCase(int nbUpperCase) {
+	public void setLineSize(int nbUpperCase) {
 		this.lineSize = nbUpperCase;
 	}
 	

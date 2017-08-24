@@ -1,6 +1,7 @@
 package pam.tp1.alert;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class AlertMail implements IAlertMessenger {
 
 	@Autowired
-	 public JavaMailSender emailSender;
+	public JavaMailSender emailSender;
 	
 	@Override
 	public void sendMessage(String message) {

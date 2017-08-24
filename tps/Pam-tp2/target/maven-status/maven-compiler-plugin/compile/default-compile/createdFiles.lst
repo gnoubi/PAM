@@ -1,0 +1,8 @@
+pam/tp2/boot/Application.class
+pam/tp1/alert/AlertMail.class
+pam/tp2/web/Frontend.class
+pam/tp1/format/IFormatMessage.class
+pam/tp1/alert/IAlertMessenger.class
+pam/tp1/format/SimpleFormatMessage.class
+pam/tp1/format/AdvancedFormatMessage.class
+pam/tp1/format/SplitFormatMessage.class

@@ -6,6 +6,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     
 	<context:annotation-config/>
+	
+	
 	<bean id="simple_message_formater"
 		class="pam.tp1.format.SimpleFormatMessage" >
 	</bean>
@@ -13,24 +15,9 @@
 	<bean id="alertMail" 
 		class="pam.tp1.alert.AlertMail">
 	</bean>
-		<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
- 		<property name="host" value="smtp.gmail.com" />  
-    		<property name="username" value="nmarilleau@gmail.com" />  
-    		<property name="password" value="P23A!x" />  
-    		<property name="javaMailProperties">  
-	    <props>  
-	              <prop key="mail.smtp.auth">true</prop>  
-	              <prop key="mail.smtp.socketFactory.port">465</prop>  
-	              <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>  
-	              <prop key="mail.smtp.port">465</prop>  
-	    </props>  
-    		</property>  
-	</bean> 
-	
-	
 	<bean id="split_message_formater"
 		class="pam.tp1.format.SplitFormatMessage"  >
-			<constructor-arg name="nb" value="10" />
+			<constructor-arg name="nb" type="int" value="10" />
 	</bean>
 
 	<bean id="advanced_message_formater"
@@ -40,6 +27,7 @@
 	</bean>
 	
 
-	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	</bean>
 
 </beans>
