@@ -8,26 +8,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 @Controller
 @Scope("session")
 public class Frontend {
 	private static Logger logger = Logger.getLogger(Frontend.class);
-	int nbConnexion = 0;
-	
-	public Frontend()
-	{
+	int nbEssais = 0;
+	public Frontend() {
 		super();
 		logger.info("initialize bean");
 	}
 	
-	
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        model.addAttribute("connexion", nbConnexion);
-        nbConnexion++;
+        model.addAttribute("connexion", nbEssais);
+        nbEssais++;
         return "greeting";
     }
-
+    
+    @RequestMapping("/authentification")
+    public String authentification(@RequestParam(value="login", required=false, defaultValue="anonymous") String name, @RequestParam(value="password", required=false, defaultValue="anonyous") String pass , Model model) {
+        model.addAttribute("login", name);
+        model.addAttribute("pass", name);
+        //model.addAttribute("connexion", nbConnexion);
+        nbEssais++;
+        return "authentification";
+    }
+    
 }
