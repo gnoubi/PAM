@@ -7,7 +7,7 @@
     
 	<context:annotation-config/>
 	
-
+	
 	<bean id="simple_message_formater"
 		class="pam.tp1.format.SimpleFormatMessage" >
 	</bean>
@@ -39,6 +39,4 @@
             </props>
         </property>
 	</bean>
-
-
 </beans>
