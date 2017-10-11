@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import pam.tp3.model.Sensor;
+import pam.tp3.model.User;
 import pam.tp3.repositories.SensorRepository;
+import pam.tp3.repositories.UserRepository;
 
 
 @Controller
@@ -22,6 +24,9 @@ public class Frontend {
 	
 	@Autowired
 	private SensorRepository sensorRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	private Sensor sens = null;
 	
@@ -32,7 +37,7 @@ public class Frontend {
 		logger.info("initialize bean");
 	}
 	
-    @RequestMapping("/greeting")
+    @RequestMapping(name="/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
     		model.addAttribute("name", name);
         model.addAttribute("connexion", nbEssais);
@@ -41,7 +46,8 @@ public class Frontend {
     }
     
     @RequestMapping("/horloge")
-    public @ResponseBody String greeting( Model model) {
-    		      return  ""+Calendar.getInstance().getTimeInMillis();
+    public @ResponseBody MyDate horloge( ) {
+    		      return new MyDate();
     }
+    
 }

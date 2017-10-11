@@ -9,5 +9,28 @@ import javax.persistence.Id;
 public class SensorData {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	int dataId;
+	long dataId;
+	String data;
+	
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+	
+	public long getDataId() {
+		return dataId;
+	}
+
+	public void setDataId(int dataId) {
+		this.dataId = dataId;
+	}
+
+	public SensorData()	{
+	}
+	
+	
+	
 }

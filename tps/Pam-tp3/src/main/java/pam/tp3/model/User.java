@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class User {
@@ -13,6 +14,9 @@ public class User {
 	
 	String nom;
 	String prenom;
+	
+	@ManyToOne
+	Address address;
 	
 	public User(){}
 	
@@ -34,7 +38,20 @@ public class User {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	public long getUserID() {
 		return userID;
 	}
+	public void setUserID(long userID) {
+		this.userID = userID;
+	}
+	
 }

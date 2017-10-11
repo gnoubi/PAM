@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script>
+function jsoncallback(data){
+  $("#milisec").text(data.mili);
+  $("#annee").text(data.year);
+  setTimeout(go,3000);
+
+}
+function go() {
+	  $.getJSON("http://localhost:8080/horloge",jsoncallback);
+	}
+	
+</script>
+<meta charset="UTF-8">
+<title>Bienvenue</title>
+</head>
+<body>
+
+<p>heure actuelle en millisecondes <span id="milisec"></span> année <span id="annee"></span> .</p>
+
+<a href="#" onclick='go();'>go</a>
+</body>
+</html>
