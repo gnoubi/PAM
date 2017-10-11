@@ -18,17 +18,12 @@ import pam.tp3.repositories.SensorRepository;
 import pam.tp3.repositories.UserRepository;
 
 
-@Controller
+@Controller("monControleur")
 @Scope("session")
+@RequestMapping("/hello")
 public class Frontend {
 	
-	@Autowired
-	private SensorRepository sensorRepository;
 	
-	@Autowired
-	private UserRepository userRepository;
-	
-	private Sensor sens = null;
 	
 	private static Logger logger = Logger.getLogger(Frontend.class);
 	int nbEssais = 0;
@@ -37,7 +32,7 @@ public class Frontend {
 		logger.info("initialize bean");
 	}
 	
-    @RequestMapping(name="/greeting")
+    @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
     		model.addAttribute("name", name);
         model.addAttribute("connexion", nbEssais);

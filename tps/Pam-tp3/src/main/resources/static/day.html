@@ -10,7 +10,7 @@ function jsoncallback(data){
 
 }
 function go() {
-	  $.getJSON("http://localhost:8080/horloge",jsoncallback);
+	  $.getJSON("http://localhost:8080/hello/horloge",jsoncallback);
 	}
 	
 </script>
@@ -21,6 +21,8 @@ function go() {
 
 <p>heure actuelle en millisecondes <span id="milisec"></span> année <span id="annee"></span> .</p>
 
-<a href="#" onclick='go();'>go</a>
+<a href="#" onclick='go();'>Clickez ici pour démarrer les mises à jour</a><br/>
+<hr/>
+<a href="/" >Retour à l'accueil</a>
 </body>
 </html>
